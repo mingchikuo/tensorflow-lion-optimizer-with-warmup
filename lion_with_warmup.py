@@ -1,15 +1,22 @@
-# Hi, I'm Mitchel, an AI developer. If you use or distribute my code,
-# please keep this copyright statement and the APACHE LICENSE 2.0.
+"""
+Copyright © 2023 Ming-Chi Kuo (Mitchel) and https://github.com/mingchikuo
 
-# Modified by Ming-Chi Kuo(Mitchel) based on 2023 Google Research and 
-# https://github.com/google/automl/blob/master/lion/lion_tf2.py. This 
-# modification does not represent the 2023 Google Research but reflects
-# my own implement.
+1. Hi everyone, I'm Ming-Chi Kuo (Mitchel), an AI and software algorithm developer. You can find my work on GitHub at https://github.com/mingchikuo.
+
+2. If you wish to utilize any of the open-source algorithms I have provided for personal or research purposes, 
+
+kindly acknowledge the authorship by crediting me (Ming-Chi Kuo) and including my GitHub profile URL(https://github.com/mingchikuo).
+
+3. Please note that any commercial use of these open-source algorithms is strictly prohibited without my explicit consent.
+
+4. For inquiries or potential collaborations, please feel free to reach out to me via my GitHub profile.
+
+5. Modified by Ming-Chi Kuo(Mitchel) based on 2023 Google Research and https://github.com/google/automl/blob/master/lion/lion_tf2.py. 
+This modification does not represent the 2023 Google Research but reflects my own implement.
+"""
 
 """
-TF2 implementation of the Lion optimizer with warmup feature.
-
-The optimizer has a num_warmup_batches hyperparameter that you can set when 
+The optimizer(lion) has a num_warmup_batches hyperparameter that you can set when 
 initializing the optimizer. This parameter represents the number of batches 
 used for warm-up.
 
@@ -21,14 +28,6 @@ towards 1 as training progresses.
 The learning rate (lr) is then scaled by this warmup_coeff. This means 
 that during the warm-up phase, the learning rate is gradually increased 
 from its initial value to the full learning rate specified by the user.
-
-The apply_state dictionary, which contains various optimizer state information,
- is updated with the modified learning rate based on the warm-up coefficient.
-
-In summary, the warm-up functionality allows the learning rate to start low and
- gradually increase to its full value during the initial training batches. 
- This can help stabilize the training process, especially when using large 
- learning rates or training deep neural networks.
 """
 
 import tensorflow as tf
